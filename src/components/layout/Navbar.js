@@ -1,12 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+//TODO: Click SY to searchUser as SY
+
 const Navbar = ({ icon, title }) => {
+  console.log(icon);
+  console.log(title);
+  //searchUser.c;
+
   return (
     <nav className="navbar bg-primary">
-      <h1>
-        <i className={icon} />
-        {title}
-      </h1>
+      <Link to="/">
+        <h1>
+          <i className={icon} />
+          {title}
+        </h1>
+      </Link>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
     </nav>
   );
 };
