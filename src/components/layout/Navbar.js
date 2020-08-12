@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 //TODO: Click SY to searchUser as SY
 
-const Navbar = ({ icon, title }) => {
+const Navbar = ({ icon, title, searchUser }) => {
   console.log(icon);
   console.log(title);
   //searchUser.c;
@@ -14,7 +14,15 @@ const Navbar = ({ icon, title }) => {
       <Link to="/">
         <h1>
           <i className={icon} />
-          {title}
+          {"         "}
+          <button
+            className="btn btn-link"
+            onClick={(e) => {
+              searchUser("esswhye");
+            }}
+          >
+            {title}
+          </button>
         </h1>
       </Link>
       <ul>
