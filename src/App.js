@@ -1,14 +1,14 @@
 import React, { useState, Fragment } from "react";
 import "./App.css";
 import Alert from "./components/layout/Alert";
-import User from "./components/users/User";
-import Search from "./components/users/Search";
 import Navbar from "./components/layout/Navbar";
 //import axios from "axios";
 import GithubState from "./context/github/GithubState";
 import AlertState from "./context/alert/AlertState";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/pages/About";
+import Home from "./components/pages/Home";
+import NotFound from "./components/pages/NotFound";
 import SingleUser from "./components/users/SingleUser";
 
 const App = () => {
@@ -111,6 +111,8 @@ const App = () => {
                 <Route
                   exact
                   path="/"
+                  component={Home}
+                  /*
                   render={(props) => (
                     <Fragment>
                       <Search
@@ -121,7 +123,8 @@ const App = () => {
                       />
                       <User />
                     </Fragment>
-                  )}
+                    )}
+                    */
                 />
                 <Route exact path="/about" component={About} />
                 <Route
@@ -141,6 +144,7 @@ const App = () => {
                 )}
                 */
                 />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
